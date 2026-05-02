@@ -493,56 +493,7 @@ CREATE INDEX idx_removal_events_detected ON removal_events(detected_at);
 
 ---
 
-## 7. Technology Stack
-
-### Backend
-
-| Component | Technology | Reason |
-|---|---|---|
-| Language | Python 3.12 | Primary language, rich scraping and data ecosystem |
-| Web framework | FastAPI | Async, fast, auto-generates OpenAPI docs |
-| ORM | SQLAlchemy 2.0 (async) | Full control over queries, async support |
-| Task queue | Celery + Redis | Distributed scraping workers, reliable scheduling |
-| Browser automation | Playwright (Python) | Handles JS-rendered pages, better than Selenium |
-| HTTP client | httpx | Async HTTP, used for lightweight URL checks |
-| Hashing | hashlib (stdlib) | SHA-256, no external dependency |
-| Timestamping | opentimestamps-client | Bitcoin blockchain proofs |
-| Embeddings | sentence-transformers | Multilingual, runs locally, no API cost |
-| AI classification | Anthropic Python SDK | Claude API for content tagging |
-
-### Data
-
-| Component | Technology | Reason |
-|---|---|---|
-| Primary database | PostgreSQL 16 | Mature, pgvector support, strong JSON support |
-| Vector search | pgvector extension | Semantic search without a separate vector DB |
-| Cache / broker | Redis | Celery broker + API response caching |
-| Object storage | Cloudflare R2 | Store .ots proof files and screenshots cheaply |
-| Decentralized storage | IPFS (via Pinata API) | Censorship-resistant screenshot archive |
-
-### Frontend
-
-| Component | Technology |
-|---|---|
-| Framework | React + Vite |
-| Charts | Recharts |
-| Map | react-simple-maps |
-| Styling | Tailwind CSS |
-| Real-time feed | WebSockets (FastAPI native) |
-
-### Infrastructure
-
-| Component | Technology |
-|---|---|
-| Hosting | Fly.io (outside India) |
-| Database hosting | Supabase (PostgreSQL managed) |
-| CI/CD | GitHub Actions |
-| Monitoring | Sentry (errors) + Uptime Robot |
-| Secrets | Environment variables via Fly.io secrets |
-
----
-
-## 8. Infrastructure and Deployment
+## 7. Infrastructure and Deployment
 
 ### Why hosted outside India
 
@@ -587,7 +538,7 @@ ENVIRONMENT=production
 
 ---
 
-## 9. Security and Legal Considerations
+## 8. Security and Legal Considerations
 
 ### Data minimization
 
@@ -615,7 +566,7 @@ If Inkblot's monitoring infrastructure is itself targeted (scrapers blocked, ser
 
 ---
 
-## 10. Priority Tier System
+## 9. Priority Tier System
 
 Creators are assigned to tiers based on assessed risk and importance:
 
@@ -632,7 +583,7 @@ Tier assignment is automated based on:
 
 ---
 
-## 11. Anti-Scraping Strategy
+## 10. Anti-Scraping Strategy
 
 Platform anti-scraping is the primary ongoing engineering challenge. The following strategies are layered:
 
@@ -649,7 +600,7 @@ Platform anti-scraping is the primary ongoing engineering challenge. The followi
 
 ---
 
-## 12. Proof System — How Cryptographic Evidence Works
+## 11. Proof System — How Cryptographic Evidence Works
 
 The proof chain for each piece of content consists of four independent, verifiable artifacts:
 
@@ -699,7 +650,7 @@ No single point of trust. No need to trust Inkblot. Every artifact is independen
 
 ---
 
-## 13. AI Classification Pipeline
+## 12. AI Classification Pipeline
 
 ### Classification taxonomy
 
@@ -754,7 +705,7 @@ A reference set of 500 manually-tagged incidents is maintained. Weekly, the AI c
 
 ---
 
-## 14. API Reference
+## 13. API Reference
 
 Base URL: `https://api.inkblot.in/v1`
 
@@ -819,7 +770,7 @@ POST /submit
 
 ---
 
-## 15. Build Phases
+## 14. Build Phases
 
 ### Phase 1 — Core Engine (Weeks 1–4)
 
@@ -881,7 +832,7 @@ Deliverables:
 
 ---
 
-## 16. Target Users
+## 15. Target Users
 
 | User | How They Use Inkblot | What They Need |
 |---|---|---|
@@ -894,7 +845,7 @@ Deliverables:
 
 ---
 
-## 17. Project Constraints and Known Hard Problems
+## 16. Project Constraints and Known Hard Problems
 
 ### Constraint 1 — You can only archive what you've already seen
 
@@ -987,4 +938,4 @@ inkblot/
 ---
 
 *Last updated: May 2026*
-*Status: Architecture v1.0 — pre-implementation*
+*Status: Architecture v1.1 — pre-implementation - updated*
